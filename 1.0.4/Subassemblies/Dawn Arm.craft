@@ -1,0 +1,229 @@
+ship = Dawn Arm
+version = 1.0.2
+description = No description.
+type = None
+size = 0.6250005,0.792942,0.738095
+PART
+{
+	part = strutCube_4292660932
+	partName = Part
+	pos = -1.730705,32.63808,1.167108
+	attPos = 0,0,0
+	attPos0 = -1.730705,32.63808,1.167108
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutCube_4292660910
+	srfN = srfAttach,xenonTankLarge_4292684064
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = strutCube_4292660910
+	partName = Part
+	pos = -1.729625,32.87682,1.171143
+	attPos = 0,0,0
+	attPos0 = 0.001080514,0.2387346,0.004034968
+	rot = 1.490116E-07,-0.7071068,2.384186E-07,-0.7071069
+	attRot = 0,0,0,1
+	attRot0 = 2.086162E-07,-0.7071067,2.086162E-07,-0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutCube_4292660888
+	srfN = srfAttach,strutCube_4292660932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = strutCube_4292660888
+	partName = Part
+	pos = -1.729625,32.98682,1.273676
+	attPos = 0,0,0
+	attPos0 = -0.1025334,0.1100003,4.278161E-08
+	rot = 0.4999998,0.5000005,0.4999997,0.5000004
+	attRot = 0,0,-0.7071067,-0.7071067
+	attRot0 = -5.960464E-08,-2.086162E-07,-0.7071065,-0.7071072
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = ionEngine_4292641676
+	srfN = srfAttach,strutCube_4292660910
+	attN = top,ionEngine_4292641676
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = ionEngine_4292641676
+	partName = Part
+	pos = -1.729625,32.98682,1.615964
+	attPos = 0,0,0
+	attPos0 = -4.365777E-08,0.342288,-8.078337E-08
+	rot = -2.086163E-07,-0.7071068,0.7071072,1.192093E-07
+	attRot = 0,0,0,1
+	attRot0 = -0.707107,-2.084596E-07,0.7071066,-3.874301E-07
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = top,strutCube_4292660888
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		thrustPercentage_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 100
+			stepIncrement = 0.5
+		}
+		EVENTS
+		{
+			Activate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Activate Engine
+				guiName = Activate Engine
+				category = Activate Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Shutdown
+			{
+				active = False
+				guiActive = True
+				guiIcon = Shutdown Engine
+				guiName = Shutdown Engine
+				category = Shutdown Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleAnimateThrottle
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
